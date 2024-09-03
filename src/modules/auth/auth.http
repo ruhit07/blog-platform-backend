@@ -1,0 +1,19 @@
+
+### Register a new user
+POST http://localhost:3900/auth/register
+Content-Type: application/json
+
+{
+  "username": "ruhit",
+  "password": "12345678",
+  "email": "ruhithassan10@gmail.com"
+}
+
+### Login
+POST http://localhost:3900/auth/login
+Content-Type: application/json
+
+{
+  "username": "ruhit",
+  "password": "12345678"
+}

@@ -1,0 +1,26 @@
+### Get list of all posts
+GET http://localhost:3900/posts
+
+### Get single post
+GET http://localhost:3900/posts/f96a1227-83b2-4f40-8179-0340e191cafa
+
+### Create a new post
+POST  http://localhost:3900/posts
+Content-Type: application/json
+
+{
+  "title": "Book 5",
+  "content": "Something Text",
+  "authorId": "d7463a8a-e48a-4f58-9334-c361ab78c727"
+}
+
+### Update a post
+PUT  http://localhost:3900/posts/d370316e-2873-4e1d-9607-1295dcbcde5e
+Content-Type: application/json
+
+{
+  "title": "Book 1"
+}
+
+### Delete a post
+DELETE  http://localhost:3900/posts/6b5af779-6087-436a-bcf8-6cc89a34b0df
