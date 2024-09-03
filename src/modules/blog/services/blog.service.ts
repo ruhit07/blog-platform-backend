@@ -45,11 +45,6 @@ export class BlogService {
   async createBlog(ctx: RequestContextDto, createBlogDto: CreateBlogDto): Promise<BlogEntity> {
     this.logger.log(`${this.createBlog.name} Called`);
 
-    const author = await this.userService.findUser(ctx.user.id);
-    if (!author) {
-      throw new NotFoundException(`Author of id ${ctx.user.id} not found`);
-    }
-
     const blog = this.blogRepo.create(createBlogDto);
     blog.authorId = ctx.user.id;
     return this.blogRepo.save(blog);

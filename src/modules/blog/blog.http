@@ -10,8 +10,7 @@ Content-Type: application/json
 
 {
   "title": "Book 5",
-  "content": "Something Text",
-  "authorId": "d7463a8a-e48a-4f58-9334-c361ab78c727"
+  "content": "Something Text"
 }
 
 ### Update a post
