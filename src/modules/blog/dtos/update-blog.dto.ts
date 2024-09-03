@@ -8,7 +8,4 @@ export class UpdateBlogDto {
   @IsString()
   @IsNotEmpty()
   content: string;
-
-  @IsUUID('4')
-  authorId: string;
 }

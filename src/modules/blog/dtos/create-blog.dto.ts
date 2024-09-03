@@ -10,8 +10,4 @@ export class CreateBlogDto {
   @IsNotEmpty()
   @IsDefined()
   content: string;
-
-  @IsUUID('4')
-  @IsDefined()
-  authorId: string;
 }
