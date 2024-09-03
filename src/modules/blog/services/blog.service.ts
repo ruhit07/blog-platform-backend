@@ -21,19 +21,11 @@ export class BlogService {
 
     const { authorId, title } = filterBlogDto;
 
-    const qb = this.blogRepo
-      .createQueryBuilder('blog')
-      .select(['blog', 'author.id', 'author.username', 'author.email']);
+    const reqQuery: any = {};
+    if (title) reqQuery.title = title;
+    if (authorId) reqQuery.authorId = authorId;
 
-    if (title) qb.where('blog.title = :title', { title });
-    if (authorId) qb.where('blog.authorId = :authorId', { authorId });
-
-    qb.leftJoin('blog.author', 'author');
-    qb.orderBy('blog.createdAt', 'DESC');
-
-    const result = await qb.getMany();
-
-    return result;
+    return this.blogRepo.find({ where: reqQuery, order: { createdAt: 'DESC' } });
   }
 
   async getBlog(ctx: RequestContextDto, id: string): Promise<BlogEntity> {
